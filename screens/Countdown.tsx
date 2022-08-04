@@ -6,7 +6,7 @@ import { useFonts } from "expo-font";
 
 
 
-export default function CountDownTimer(props) {
+export default function CountDownTimer(props: any) {
   // Loading the fonts for the timer
   const [loaded] = useFonts({
     K2D: require('../assets/fonts/K2D-Regular.ttf'),
@@ -18,7 +18,7 @@ export default function CountDownTimer(props) {
 
   const [totalDuration, setTotalDuration] = useState(props.intialValue);
 
-  const getCountdownColor = (changeColor) => {
+  const getCountdownColor = (changeColor: boolean) => {
     if (changeColor == true){
       // if (totalDuration > 5256005.76) {
       //   return '#62BA75'
@@ -41,9 +41,9 @@ export default function CountDownTimer(props) {
     //Let suppose we have to show the countdown for above date-time
     var diffr = moment.duration(moment(expirydate).diff(moment(date)));
     //difference of the expiry date-time given and current date-time
-    var hours = parseInt(diffr.asHours());
-    var minutes = parseInt(diffr.minutes());
-    var seconds = parseInt(diffr.seconds());
+    var hours = diffr.asHours();
+    var minutes = diffr.minutes();
+    var seconds = diffr.seconds();
     var d = hours * 60 * 60 + minutes * 60 + seconds;
     //converting in seconds
     setTotalDuration(d);
@@ -68,7 +68,7 @@ export default function CountDownTimer(props) {
       //The size below controls the size of the countdown timer
       size={props.changeColor === true ? 15 : 18}
       timeLabelStyle = {{color: 'transparent'}}
-      digitStyle = {{color: 'transparent'}}
+      digitStyle = {{backgroundColor: 'transparent'}}
       // timeLabelStyle={{ color: 'transparent', fontWeight: 'bold', marginBottom: 20, fontSize: 8, width: 30 }}
       // digitTxtStyle={{ color: 'black' }}
       digitTxtStyle={{ color: getCountdownColor(props.changeColor), fontWeight: 'bold', fontSize: props.changeColor === true? 20 : 22, lineHeight: 27, fontFamily:  props.changeColor === true ? 'CountdownMontserrat' : 'boldK2D' ,}}

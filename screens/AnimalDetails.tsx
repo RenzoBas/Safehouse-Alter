@@ -4,7 +4,7 @@ import { PetCard } from './PetCard';
 import Countdown from './Countdown';
 
 {/* Tells the details of the animal through console log... provides ROUTE*/ }
-export default function AnimalDetails({ route, navigation }) {
+export default function AnimalDetails({ route, navigation } : {route: any, navigation: any}) {
     console.log(route.params.image);
 
     {/* Creates the route to go to 'options' tab (via const goToOptions) */ }
@@ -138,7 +138,6 @@ const styles = StyleSheet.create({
     },
     item: {
         marginTop: 2.5,
-        color: 'black',
         fontSize: 14,
         alignSelf: 'flex-start',
         fontFamily: 'K2D',

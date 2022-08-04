@@ -2,14 +2,19 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image, TouchableOpacity } from 'react-native';
 import CustomDatePicker from './DatePicker';
-import DateTimePicker from '@react-native-community/datetimepicker'
+// import DateTimePicker from '@react-native-community/datetimepicker'
 import { useFonts } from 'expo-font';
 
 // import CustomTimePicker from './TimePicker';
 
-const UselessTextInput = ({ navigation }) => {
+const UselessTextInput = ({ navigation } : { navigation: any }) => {
     const [text, onChangeText] = React.useState("Useless Text");
-    const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree, timeSetOne, timeSetTwo] = React.useState(null);
+    const [numbaOne, onChangeNumbaOne] = React.useState('');
+    const [numbaTwo, onChangeNumbaTwo] = React.useState('');
+    const [numbaThree, onChangeNumbaThree] = React.useState('');
+    const [timeSetOne, onChangeTimeSetOne] = React.useState('');
+    const [timeSetTwo, onChangeTimeSetTwo] = React.useState('');
+
     const [am, onChangeAM] = React.useState(true);
     const [pm, onChangePM] = React.useState(false);
     const timeAM = () => {
@@ -32,21 +37,21 @@ const UselessTextInput = ({ navigation }) => {
                     <Text style={styles.safehouseText}>Personal Details</Text>
                     <TextInput
                         style={styles.input}
-                        onChangeText={onChangeNumber}
+                        onChangeText={onChangeNumbaOne}
                         value={numbaOne}
                         placeholder="First Name"
                         keyboardType="default"
                     />
                     <TextInput
                         style={styles.input}
-                        onChangeText={onChangeNumber}
+                        onChangeText={onChangeNumbaTwo}
                         value={numbaTwo}
                         placeholder="Last Name"
                         keyboardType="default"
                     />
                     <TextInput
                         style={styles.input}
-                        onChangeText={onChangeNumber}
+                        onChangeText={onChangeNumbaThree}
                         value={numbaThree}
                         placeholder="Email Address"
                         keyboardType="default"
@@ -62,20 +67,21 @@ const UselessTextInput = ({ navigation }) => {
                             fontFamily: 'K2D',
                             marginLeft: 5,
                         }}
-                        onChange={(value) => console.log(`New date set to: ${value}`)} />
+                        /*onChange={(value) => console.log(`New date set to: ${value}`)}*/
+                    />
 
                     <View style={styles.timeSetView}>
                     <Text style={styles.dateTimeConfirmText}>Time:</Text>
                     <TextInput
                         style={styles.timeSetStyle}
-                        onChangeText={onChangeText}
+                        onChangeText={onChangeTimeSetOne}
                         value={timeSetOne}
                         textAlign={'center'}
                     />
                     <Text style={{marginLeft: 14, marginRight: 10, fontSize: 25,}}>:</Text>
                     <TextInput
                         style={styles.timeSetStyle}
-                        onChangeText={onChangeText}
+                        onChangeText={onChangeTimeSetTwo}
                         value={timeSetTwo}
                         textAlign={'center'}
                     />

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, ScrollView, FlatList, Button, Pressable, Image, Platform } from 'react-native';
 import React from 'react';
 
-export default function GoToHome({ navigation }) {
+export default function GoToHome({ navigation } : { navigation: any }) {
 
     return (
         <View style={{ backgroundColor: 'white', flex: 1 }}>

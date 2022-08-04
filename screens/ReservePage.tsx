@@ -3,9 +3,17 @@ import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TouchableOpacity, TextInput, Image } from 'react-native';
 import StripeComponent from './StripeComponent';
 
-const UselessTextInput = ({ navigation }) => {
+const UselessTextInput = ({ navigation } : {navigation: any}) => {
   const [text, onChangeText] = React.useState("");
-  const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree, numbaFour, numbaFive, numbaSix, transText] = React.useState(null);
+  const [numbaOne, onChangeNumbaOne] = React.useState('');
+  const [numbaTwo, onChangeNumbaTwo] = React.useState('');
+  const [numbaThree, onChangeNumbaThree] = React.useState('');
+  const [numbaFour, onChangeNumbaFour] = React.useState('');
+  const [numbaFive, onChangeNumbaFive] = React.useState('');
+  const [numbaSix, onChangeNumbaSix] = React.useState('');
+  const [transText, onChangeTransText] = React.useState('');
+
+
   // const stripePromise = loadStripe('###');
 
 
@@ -23,7 +31,7 @@ const UselessTextInput = ({ navigation }) => {
           <View style={styles.reservationInput}>
             <TextInput
               style={styles.input}
-              onChangeText={onChangeNumber}
+              onChangeText={onChangeNumbaOne}
               value={numbaOne}
               placeholder="Reservation Price: $XX.XX"
               keyboardType="default"
@@ -34,17 +42,17 @@ const UselessTextInput = ({ navigation }) => {
           <View style={[styles.transRow, {marginBottom: 70}]}>
             <TextInput
               style={styles.transBoxStyle}
-              onChangeText={onChangeText}
+              onChangeText={onChangeTransText}
               value={transText}
             />
             <TextInput
               style={styles.transBoxStyle}
-              onChangeText={onChangeText}
+              onChangeText={onChangeTransText}
               value={transText}
             />
             <TextInput
               style={styles.transBoxStyle}
-              onChangeText={onChangeText}
+              onChangeText={onChangeTransText}
               value={transText}
             />
           </View>

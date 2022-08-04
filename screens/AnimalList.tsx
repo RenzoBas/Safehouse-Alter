@@ -8,7 +8,19 @@ import { PetCard } from './PetCard';
 {/* Sets constant 'animals' and a new function 'setAnimals' equal to useState */ }
 {/* After the constants are set, there is hardcoded information about each of the animals*/ }
 
-export default function AnimalList({ navigation }) {
+export default function AnimalList({ navigation } : { navigation: any}) {
+    interface Animal{
+        name: string;
+        time: string;
+        image: string;
+        breed: string;
+        age: string;
+        sex: string;
+        weight: string;
+        shelter: string;
+        desc: string;
+        notes: string;
+    }
     const [animals, setAnimals] = useState([
         {
             name: 'Hydra',
@@ -132,15 +144,14 @@ export default function AnimalList({ navigation }) {
         },
     ])
     {/* This constant: 'goToDetails' navigates to AnimalDetails*/ }
-    const goToDetails = (animal) => {
+    const goToDetails = (animal : Animal) => {
         console.log(animal)
         navigation.navigate('AnimalDetails', animal);
     }
-    const goToShelter = (animal) => {
-        console.log(animal)
-        navigation.navigate('ShelterOptions', animal);
+    const goToShelter = () => {
+        navigation.navigate('ShelterOptions');
     }
-    const goToMarket = (animal) => {
+    const goToMarket = () => {
         navigation.navigate('Market');
     }
     {/* The 'PetCard' outside of the 'Details' button... it displays the animals' names, times, images */ }

@@ -1,22 +1,22 @@
 {/* Imports important stuff from React */ }
 import React from 'react'
 import { StyleSheet, Text, View, Image, Button, Pressable, TouchableOpacity } from 'react-native';
-import { TouchableWithoutFeedback } from 'react-native-web';
+// import { TouchableWithoutFeedback } from 'react-native-web';
 import Countdown from './Countdown';
 import moment from 'moment';
 
 {/* This exports the variables (image, name, time) and the function: 'goToDetails' */ }
-const getCountdownColor = (changeColor) => {
-    if (changeColor == true) {
-        if (totalDuration > 5256005.76) {
-            return '#62BA75'
-        } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
-            return '#B8BA62'
-        } else { return '#BA6262' }
-    }
-}
+// const getCountdownColor = (changeColor) => {
+//     if (changeColor == true) {
+//         if (totalDuration > 5256005.76) {
+//             return '#62BA75'
+//         } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
+//             return '#B8BA62'
+//         } else { return '#BA6262' }
+//     }
+// }
 
-export const PetCard = ({ image, name, time, goToDetails }) => {
+export const PetCard = ({ image, time, goToDetails } : { image: string, time: string, goToDetails: string }) => {
     {/* Displays what you see in the First Page... IMPORTANT: WITHIN THIS, YOU WILL FIND THE 'goToDetails' THAT SENDS YOU TO THE DETAILS PAGE via A STACK */ }
 
     const getBorderColor = (countdown) => {
@@ -28,9 +28,9 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
         //Let suppose we have to show the countdown for above date-time
         var diffr = moment.duration(moment(expirydate).diff(moment(date)));
         //difference of the expiry date-time given and current date-time
-        var hours = parseInt(diffr.asHours());
-        var minutes = parseInt(diffr.minutes());
-        var seconds = parseInt(diffr.seconds());
+        var hours = diffr.asHours();
+        var minutes = diffr.minutes();
+        var seconds = diffr.seconds();
         var d = hours * 60 * 60 + minutes * 60 + seconds;
         //converting in seconds
         // count down in seconds is stored within var d

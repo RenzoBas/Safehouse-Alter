@@ -1,7 +1,8 @@
 {/* Imports React components */ }
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, Image, Platform, TouchableOpacityComponent, TouchableOpacity } from 'react-native';
-import React, { startTransition } from 'react';
-import { launchImageLibrary } from 'react-native-image-picker';
+// import { startTransition } from 'react';
+import React from 'react';
+// import { launchImageLibrary } from 'react-native-image-picker';
 import CountDownTimer from './Countdown';
 
 // const SERVER_URL = 'http://localhost:3000';
@@ -67,7 +68,7 @@ import CountDownTimer from './Countdown';
 // export default App;
 
 {/* Now you are in 'ShelterOptions' */ }
-export default function ShelterOptions({ route, navigation }) {
+export default function ShelterOptions({ route, navigation } : { route: any, navigation: any}) {
   console.log(route);
 
   {/* Creates the route to go to 'Support' and 'Adopt' tab (via const goToSupport and goToAdopt functions) */ }
@@ -153,11 +154,10 @@ export default function ShelterOptions({ route, navigation }) {
                 </View>
               </View>
               <View style={{ height: 2, width: '90%', backgroundColor: '#545454', alignSelf: 'center', }}></View>
-              <Text style={{ fontFamily: 'lightK2D', fontSize: 14, marginTop: 5, marginLeft: 25, fontSize: 18, color: '#545454' }}>Active Entries</Text>
+              <Text style={{ fontFamily: 'lightK2D', marginTop: 5, marginLeft: 25, fontSize: 18, color: '#545454' }}>Active Entries</Text>
 
               <FlatList
                 // scrollEnabled={true}
-                style={styles.catList}
                 numColumns={2}
                 data={[
                   { name: 'Cat', time: '2022-08-25 04:00:29', image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' },
@@ -250,7 +250,6 @@ const styles = StyleSheet.create({
   },
   item: {
     marginTop: 2.5,
-    color: 'black',
     fontSize: 14,
     alignSelf: 'flex-start',
     fontFamily: 'lightK2D',

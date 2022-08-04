@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Image, Pressable, TouchableOpacity } from 'react-native';
 
-const Market = ({ navigation }) => {
+const Market = ({ navigation } : { navigation: any }) => {
     return (
         <View style={styles.container}>
             <SafeAreaView>

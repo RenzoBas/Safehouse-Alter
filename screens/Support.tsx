@@ -2,9 +2,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image, TouchableOpacity } from 'react-native';
 
-const UselessTextInput = ({ navigation }) => {
+const UselessTextInput = ({ navigation } : {navigation: any}) => {
   const [text, onChangeText] = React.useState("");
-  const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree, numbaFour, numbaFive, numbaSix, transText] = React.useState(null);
+  const [numbaOne, onChangeNumbaOne] = React.useState('');
+  const [numbaTwo, onChangeNumbaTwo] = React.useState('');
+  const [numbaThree, onChangeNumbaThree] = React.useState('');
+  const [numbaFour, onChangeNumbaFour] = React.useState('');
+  const [numbaFive, onChangeNumbaFive] = React.useState('');
+  const [numbaSix, onChangeNumbaSix] = React.useState('');
+  const [transText, onChangeTransText] = React.useState('');
 
   // const goToDetails = () => {
   //   navigation.navigate('AnimalDetails')
@@ -23,7 +29,7 @@ const UselessTextInput = ({ navigation }) => {
           <Text style={styles.safehouseText}></Text>
           <TextInput
             style={styles.input}
-            onChangeText={onChangeNumber}
+            onChangeText={onChangeNumbaOne}
             value={numbaOne}
             placeholder="$XX.XX"
             keyboardType="default"
@@ -33,30 +39,30 @@ const UselessTextInput = ({ navigation }) => {
           <View style={styles.transRow}>
             <TextInput
               style={styles.transBoxStyle}
-              onChangeText={onChangeText}
+              onChangeText={onChangeTransText}
               value={transText}
             />
             <TextInput
               style={styles.transBoxStyle}
-              onChangeText={onChangeText}
+              onChangeText={onChangeTransText}
               value={transText}
             />
             <TextInput
               style={styles.transBoxStyle}
-              onChangeText={onChangeText}
+              onChangeText={onChangeTransText}
               value={transText}
             />
           </View>
           <TextInput
             style={styles.inputCardInfo}
-            onChangeText={onChangeNumber}
+            onChangeText={onChangeNumbaTwo}
             value={numbaTwo}
             placeholder="Card Number"
             keyboardType="numeric"
           />
           <TextInput
             style={styles.inputCardInfo}
-            onChangeText={onChangeNumber}
+            onChangeText={onChangeNumbaThree}
             value={numbaThree}
             placeholder="Cardholder's Name"
             keyboardType="default"
@@ -64,14 +70,14 @@ const UselessTextInput = ({ navigation }) => {
           <View style={styles.cvvExpiryInfo}>
             <TextInput
               style={styles.columnCard}
-              onChangeText={onChangeNumber}
+              onChangeText={onChangeNumbaFour}
               value={numbaFour}
               placeholder="CVV/CVC"
               keyboardType="numeric"
             />
             <TextInput
               style={styles.columnCard}
-              onChangeText={onChangeNumber}
+              onChangeText={onChangeNumbaFive}
               value={numbaFive}
               placeholder="Expiration Date"
               keyboardType="default"
@@ -79,7 +85,7 @@ const UselessTextInput = ({ navigation }) => {
           </View>
           <TextInput
             style={styles.inputCardInfo}
-            onChangeText={onChangeNumber}
+            onChangeText={onChangeNumbaSix}
             value={numbaSix}
             placeholder="Zip Code"
             keyboardType="numeric"

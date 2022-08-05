@@ -16,7 +16,7 @@ import moment from 'moment';
 //     }
 // }
 
-export const PetCard = ({ image, time, goToDetails } : { image: string, time: string, goToDetails: string }) => {
+export const PetCard = ({ image, time, goToDetails } : { image: string, time: string, goToDetails: () => void }) => {
     {/* Displays what you see in the First Page... IMPORTANT: WITHIN THIS, YOU WILL FIND THE 'goToDetails' THAT SENDS YOU TO THE DETAILS PAGE via A STACK */ }
 
     const getBorderColor = (countdown: any) => {

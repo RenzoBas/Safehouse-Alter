@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, Modal, TouchableHighlight, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Button, Modal, TouchableHighlight, Image, TouchableOpacity, Platform } from 'react-native';
 import Constants from 'expo-constants';
 import DateTimePicker from '@react-native-community/datetimepicker'
 import moment from 'moment';
@@ -10,7 +10,7 @@ export default function CustomDatePicker (props: any) {
     const [date, setDate] = React.useState(defaultDate);
     const [show, setShow] = React.useState(false);
     
-    const onChange = (date, selectedDate) => {
+    const onChange = (selectedDate: any) => {
       setDate(moment(selectedDate));
     }
     
@@ -59,11 +59,11 @@ export default function CustomDatePicker (props: any) {
                     flexDirection: 'row',
                   }}
                   activeOpacity={1}
-                  visible = {show}
+                  // visible = {show}
                   onPress={() => setShow(false)}>
     
                   <TouchableOpacity
-                    underlayColor={'#FFFFFF'}
+                    // underlayColor={'#FFFFFF'}
                     style = {{
                       flex:1,
                       borderTopColor: '#E9E9E9',
@@ -90,13 +90,13 @@ export default function CustomDatePicker (props: any) {
                         </View>
     
                         <TouchableOpacity
-                          underlayColor={'transparent'}
+                          // underlayColor={'transparent'}
                           onPress = {onCancel}
                           style = {[styles.btnText, styles.btnCancel]}>
                           <Text> Cancel </Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                          underlayColor={'transparent'}
+                          // underlayColor={'transparent'}
                           onPress = {onDone}
                           style = {[styles.btnText, styles.btnDone]}>                  
                           <Text> Done </Text>

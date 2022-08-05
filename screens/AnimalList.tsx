@@ -177,7 +177,7 @@ export default function AnimalList({ navigation } : { navigation: any}) {
             columnWrapperStyle={styles.row}
             data = {animals}
             renderItem = {({ item }) => (
-                <PetCard key={item.name} goToDetails={() => { goToDetails(item) }} name={item.name} time={item.time} image={item.image} />
+                <PetCard key={item.name} goToDetails={() => { goToDetails(item) }} time={item.time} image={item.image} />
             )}
             />
         </View>

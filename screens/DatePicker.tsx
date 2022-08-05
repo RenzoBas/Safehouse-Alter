@@ -4,13 +4,13 @@ import Constants from 'expo-constants';
 import DateTimePicker from '@react-native-community/datetimepicker'
 import moment from 'moment';
 
-export default function CustomDatePicker (props) {
+export default function CustomDatePicker (props: any) {
     const { textStyle, defaultDate } = props;
     
     const [date, setDate] = React.useState(defaultDate);
     const [show, setShow] = React.useState(false);
     
-    const onChange = (e, selectedDate) => {
+    const onChange = (date, selectedDate) => {
       setDate(moment(selectedDate));
     }
     

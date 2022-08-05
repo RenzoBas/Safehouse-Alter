@@ -19,7 +19,7 @@ import moment from 'moment';
 export const PetCard = ({ image, time, goToDetails } : { image: string, time: string, goToDetails: string }) => {
     {/* Displays what you see in the First Page... IMPORTANT: WITHIN THIS, YOU WILL FIND THE 'goToDetails' THAT SENDS YOU TO THE DETAILS PAGE via A STACK */ }
 
-    const getBorderColor = (countdown) => {
+    const getBorderColor = (countdown: any) => {
         console.log('time:', countdown)
 
         var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss');
@@ -45,7 +45,6 @@ export const PetCard = ({ image, time, goToDetails } : { image: string, time: st
     getBorderColor(time)
     return (
         <View style={[styles.container, {
-            borderWidth: 0,
             shadowOpacity: 0.8, shadowRadius: 5, shadowOffset: {
                 height: 1, width: 1
             }, shadowColor: getBorderColor(time), borderWidth: 2, borderColor: getBorderColor(time),
